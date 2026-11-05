@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mi Sitio Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+   <!-- Aquí se inyectará el header automáticamente -->
+   <div id="header-container"></div>
+
+  <main>
+    <section>
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna duda o quieres ponerte en contacto? Puedes escribirme a través de mis redes o por correo.</p>
+        
+        <!-- Opcional: un pequeño formulario de contacto -->
+         <form style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre..." style="padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main);">
+
+            <label for="mensaje">Tu mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué quisieras decir?" style="padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main);"></textarea>
+
+            <button type="submit" style="padding: 0.75rem; background: var(--primary-gradient-1); color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Enviar Mensaje
+            </button>
+         </form>
+    </section>
+  </main>
+
+  <!-- Aquí se inyectará el footer automáticamente -->
+  <div id="footer-container"></div>
+
+  <!-- Enlazamos nuestro script global -->
+  <script src="js/main.js"></script>
+</body>
+</html>
