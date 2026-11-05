@@ -74,3 +74,11 @@ footer {
   color: #94a3b8;
   font-size: 0.9rem;
 }
+
+.foto-domi{
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+  border: 3px solid #60a5fa;
+  object-fit: cover;
+}
