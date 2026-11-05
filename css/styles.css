@@ -1,15 +1,37 @@
-/* Estilos generales y tipografía */
+/* =========================================
+   1. VARIABLES DE DISEÑO (:root)
+   ========================================= */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-footer: #020617;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary-gradient-1: #3b82f6;
+  --primary-gradient-2: #1d4ed8;
+  --accent-color: #60a5fa;
+  --border-color: #334155;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+/* =========================================
+   2. ESTILOS GLOBALES
+   ========================================= */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f172a; /* Fondo oscuro moderno */
-  color: #e2e8f0; /* Texto claro */
+  font-family: var(--font-base);
+  background-color: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
-/* Encabezado */
+/* =========================================
+   3. ENCABEZADO Y NAVEGACIÓN (MENÚ HORIZONTAL)
+   ========================================= */
 header {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: linear-gradient(135deg, var(--primary-gradient-1), var(--primary-gradient-2));
   color: white;
   text-align: center;
   padding: 3rem 1rem;
@@ -26,7 +48,53 @@ header p {
   opacity: 0.9;
 }
 
-/* Contenido principal */
+/* Barra de navegación horizontal */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  position: relative;
+  /* Transición suave para todos los cambios */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto hover interactivo */
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transform: translateY(-2px); /* Se eleva 2px */
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.25); /* Resplandor sutil */
+}
+
+/* Efecto click (al presionar el botón) */
+.navbar a:active {
+  transform: translateY(0);
+}
+
+/* Enlace activo */
+.navbar a.active {
+  background-color: var(--bg-card);
+  color: var(--accent-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   4. CONTENIDO PRINCIPAL Y SECCIONES
+   ========================================= */
 main {
   max-width: 800px;
   margin: 2rem auto;
@@ -34,31 +102,42 @@ main {
 }
 
 section {
-  background-color: #1e293b; /* Tarjetas oscuras */
+  background-color: var(--bg-card);
   padding: 1.5rem 2rem;
   margin-bottom: 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 section h2 {
-  color: #60a5fa;
+  color: var(--accent-color);
   margin-top: 0;
-  border-bottom: 2px solid #334155;
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
 
-/* Listas y enlaces */
-ul {
+/* Imagen de Domi */
+.foto-domi {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+/* Listas generales (fuera del nav) */
+main ul {
   padding-left: 1.5rem;
 }
 
-ul li {
+main ul li {
   margin-bottom: 0.5rem;
 }
 
 a {
-  color: #60a5fa;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -66,19 +145,13 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Pie de página */
+/* =========================================
+   5. PIE DE PÁGINA
+   ========================================= */
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #020617;
-  color: #94a3b8;
+  background-color: var(--bg-footer);
+  color: var(--text-muted);
   font-size: 0.9rem;
-}
-
-.foto-domi{
-  display: block;
-  margin: 1rem auto;
-  border-radius: 50%;
-  border: 3px solid #60a5fa;
-  object-fit: cover;
 }
