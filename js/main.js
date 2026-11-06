@@ -37,3 +37,44 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 });
+
+// Funcionalidad del botón hamburguesa
+function initHamburgerMenu() {
+  const btn = document.querySelector('.hamburger-btn');
+  const menu = document.querySelector('.nav-menu');
+  const closeBtn = document.querySelector('.close-btn');
+
+  if (!btn || !menu) return;
+
+  // Abrir / Cerrar con el botón hamburguesa
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('is-active');
+  });
+
+  // Cerrar con el botón "X"
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('is-active');
+    });
+  }
+
+  // Cerrar al hacer clic en cualquier enlace del menú
+  const links = menu.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('is-active');
+    });
+  });
+}
+
+// Inicializar el menú hamburguesa después de cargar el header
+document.addEventListener('DOMContentLoaded', async () => {
+  // Cargar header y footer en paralelo
+  await Promise.all([
+    loadComponent('header-container', 'components/header.html'),
+    loadComponent('footer-container', 'components/footer.html')
+  ]);
+
+  // Inicializar el menú hamburguesa después de inyectar el HTML
+  initHamburgerMenu();
+});

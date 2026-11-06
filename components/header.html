@@ -3,10 +3,21 @@
   <p>Desarrollo Web & Proyectos</p>
 
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
-      <li><a href="sobre-mi.html" class="nav-link" data-page="sobre-mi">Sobre mí</a></li>
-      <li><a href="contacto.html" class="nav-link" data-page="contacto">Contacto</a></li>
+    <!-- Botón hamburguesa -->
+    <button class="hamburger-btn" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menú desplegable -->
+    <ul class="nav-menu">
+      <!-- Botón X para cerrar dentro del menú -->
+      <button class="close-btn" aria-label="Cerrar menú">&times;</button>
+      
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
 </header>
